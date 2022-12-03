@@ -3,10 +3,11 @@ import './App.css';
 import Home from './pages/Home'
 import Create from './pages/Create';
 import View from './pages/View';
+import Store from "./store/Store";
 
 function App() {
   return (
-    <div className="App">
+    <Store>
       <Router>
         <Routes>
           <Route path='/' element={<Home />} />
@@ -14,7 +15,7 @@ function App() {
           <Route path='view/:bookId' element={<View />} />
         </Routes>
       </Router>
-    </div>
+    </Store>
   );
 }
 

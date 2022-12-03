@@ -1,10 +1,12 @@
-import { useState } from "react";
-import Container from "react-bootstrap/Container"
+import { useState } from "react"
+import { useAppContext } from "../store/Store"
 import Form from "react-bootstrap/Form"
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Image from 'react-bootstrap/Image'
+import Layout from "../components/Layout"
+import { useNavigate } from "react-router-dom"
 
 const Create = () =>{
     const [title, setTitle] = useState('')
@@ -13,6 +15,9 @@ const Create = () =>{
     const [intro, setIntro] = useState('')
     const [completed, setCompleted] = useState(false)
     const [review, setReview] = useState('')
+
+    const store = useAppContext()
+    const navigate = useNavigate
     
     const handleChange = (e) => {
         const name = e.target.name
@@ -60,9 +65,12 @@ const Create = () =>{
             completed,
             review,
         }
+        store.createItem(newBook)
+        navigate("/")
     }
+
     return(
-        <Container>
+        <Layout>
             <Form onSubmit={handleSubmit}>
                 <Row>
                     <p>Title</p>
@@ -94,7 +102,7 @@ const Create = () =>{
                     <Button type="submit">Add Book</Button>
                 </Row>
             </Form>
-        </Container>
+        </Layout>
     )
 }
 export default Create;
