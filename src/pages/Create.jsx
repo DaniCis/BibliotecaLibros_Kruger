@@ -1,12 +1,13 @@
 import { useState } from "react"
 import { useAppContext } from "../store/Store"
+import { useNavigate } from "react-router-dom"
 import Form from "react-bootstrap/Form"
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
-import Image from 'react-bootstrap/Image'
+import Card from 'react-bootstrap/Card'
 import Layout from "../components/Layout"
-import { useNavigate } from "react-router-dom"
+import '../assets/css/form.css'
 
 const Create = () =>{
     const [title, setTitle] = useState('')
@@ -17,12 +18,11 @@ const Create = () =>{
     const [review, setReview] = useState('')
 
     const store = useAppContext()
-    const navigate = useNavigate
+    const navigate = useNavigate()
     
     const handleChange = (e) => {
         const name = e.target.name
         const value = e.target.value
-
         switch(name){
             case 'title':
                 setTitle(value)
@@ -42,18 +42,15 @@ const Create = () =>{
             default:
         }
     }
-
     const handleChangeFile = (e) =>{
         const element = e.target
         const file = element.files[0]
-        const reader = new FileReader()
-        
+        const reader = new FileReader()     
         reader.readAsDataURL(file)
         reader.onloadend = () => {
             setCover(reader.result.toString())
         }
     }
-
     const handleSubmit = (e) =>{
         e.preventDefault()
         const newBook = {
@@ -71,37 +68,58 @@ const Create = () =>{
 
     return(
         <Layout>
-            <Form onSubmit={handleSubmit}>
-                <Row>
-                    <p>Title</p>
-                    <Form.Control type="text" name="title" onChange={handleChange} value={title} />
-                </Row>
-                <Row>
-                    <p>Author</p>
-                    <Form.Control type="text" name="author" onChange={handleChange} value={author} />
-                </Row>
-                <Row>
-                    <p>Cover</p>
-                    <Form.Control type="file" name="cover" onChange={handleChangeFile} />
-                    { !!cover && <Image src={cover} width="200" alt="preview" />}
-                </Row>
-                <Row>
-                    <p>Introduction</p>
-                    <Form.Control type="text" name="intro" onChange={handleChange} value={intro} />
-                </Row>
-                <Row>
-                    <p>Status</p>
-                    <Form.Check type="checkbox" name="completed" onChange={handleChange} value={completed} 
-                        label={`${completed ? "Completed" : "No Completed"}`} />
-                </Row>
-                <Row>
-                    <p>Review</p>
-                    <Form.Control type="text" name="review" onChange={handleChange} value={review} />
-                </Row>
-                <Row>
-                    <Button type="submit">Add Book</Button>
-                </Row>
-            </Form>
+        <Form onSubmit={handleSubmit}>
+        <Row style={{marginRight:0}} >
+            <Col xs={0} sm={1} md={2} lg={1} xl={2}></Col>
+            <Col xs={12} sm={10} md={8} lg={10} xl={8}>
+                <Card className="contenedorForm">
+                    <Row>
+                        <Col>Add a new book</Col>
+                    </Row>
+                    <Row>
+                        <Col lg={6}>
+                            <Form.Group className="mb-3">
+                                <Form.Label>Title</Form.Label>
+                                <Form.Control type="text" name="title" onChange={handleChange} value={title} />
+                            </Form.Group>
+                            <Form.Group className="mb-3">
+                                <Form.Label>Author</Form.Label>
+                                <Form.Control type="text" name="author" onChange={handleChange} value={author} />
+                            </Form.Group>
+                            <Form.Group className="mb-3">
+                                <Form.Label>Description</Form.Label>
+                                <Form.Control as="textarea" name="intro" onChange={handleChange} value={intro} />
+                            </Form.Group>
+                            <Form.Group className="mb-3">
+                                <Form.Label>Reading Status</Form.Label>
+                                <Form.Check type="checkbox" name="completed" onChange={handleChange} value={completed} 
+                                    label={`${completed ? "Completed" : "Not Completed"}`} />
+                            </Form.Group>
+                            <Form.Group className="mb-3">
+                                <Form.Label>Review</Form.Label>
+                                <Form.Control type="text" name="review" onChange={handleChange} value={review} />
+                            </Form.Group>
+                        </Col>
+                        <Col lg={6}>
+                            <Row>
+                                { !!cover &&
+                                <img src={cover} width="200" alt="preview" />}
+                                <Form.Group className="mb-3">
+                                    <Form.Label>Cover</Form.Label>
+                                    <Form.Control type="file" name="cover" onChange={handleChangeFile} />
+                                </Form.Group>
+                            </Row>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <Button type="submit">Add</Button>
+                        </Col>
+                    </Row>
+                </Card>
+            </Col>
+        </Row>
+        </Form>
         </Layout>
     )
 }

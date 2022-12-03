@@ -1,19 +1,18 @@
-import { useContext, createContext, useEffect, useState } from "react"
+import { useContext, createContext, useState } from "react"
 
 const AppContext = createContext({
     items:[],
-    createItem: (item) =>{},
-    getItem: (id) =>{},
-    updateItem: (item) =>{},
+    createItem: (item) => {},
+    getItem: (id) => {},
+    updateItem: (item) => {},
 })
 
 const Store = ({children}) =>{
-    
     const [items,setItems] = useState([])
     
     const createItem = (item) => {
         const temp = [...items]
-        temp.push(item)
+        temp.unshift(item)
         setItems(temp)
     }
     const getItem = (id) => {
@@ -31,7 +30,7 @@ const Store = ({children}) =>{
             createItem,
             getItem,
             updateItem,
-        }}>
+        }} >
             {children}
         </AppContext.Provider>
     )
