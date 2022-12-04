@@ -74,10 +74,12 @@ const Create = () =>{
             <Col xs={12} sm={10} md={8} lg={10} xl={8}>
                 <Card className="contenedorForm">
                     <Row>
-                        <Col>Add a new book</Col>
+                        <Col>
+                            <h4 className="titleForm">Add a new book</h4>
+                        </Col>
                     </Row>
                     <Row>
-                        <Col lg={6}>
+                        <Col xs={{span:10,offset:1}} lg={{span:5,offset:1}}>
                             <Form.Group className="mb-3">
                                 <Form.Label>Title</Form.Label>
                                 <Form.Control type="text" name="title" onChange={handleChange} value={title} />
@@ -100,20 +102,30 @@ const Create = () =>{
                                 <Form.Control type="text" name="review" onChange={handleChange} value={review} />
                             </Form.Group>
                         </Col>
-                        <Col lg={6}>
+                        <Col xs={{span:10,offset:1}} lg={{span:5,offset:0}}>
                             <Row>
-                                { !!cover &&
-                                <img src={cover} width="200" alt="preview" />}
                                 <Form.Group className="mb-3">
                                     <Form.Label>Cover</Form.Label>
                                     <Form.Control type="file" name="cover" onChange={handleChangeFile} />
                                 </Form.Group>
+                                <div className="contenedorImagen">
+                                    { !!cover 
+                                        ? <img className="imagenForm" src={cover} alt="preview" />
+                                        : (
+                                            <div className="contenedorNoImagen">
+                                                <div className="subContenedorNoImagen">
+                                                    <p>Cover File</p>
+                                                </div>
+                                            </div>
+                                        )
+                                    }
+                                </div>
                             </Row>
                         </Col>
                     </Row>
                     <Row>
-                        <Col>
-                            <Button type="submit">Add</Button>
+                        <Col className="btn-add">
+                            <Button variant="warning" type="submit">Add Now 📖</Button>
                         </Col>
                     </Row>
                 </Card>

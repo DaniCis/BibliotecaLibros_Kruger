@@ -1,3 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat&display=swap');
+
 .contenedorForm{
-    margin: 40px 30px;
+    margin: 30px 20px;
+}
+.titleForm{
+    margin:18px;
+    text-align: center;
+    font-family: 'Montserrat', cursive;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.contenedorForm .form-label{
+    font-weight: 500;
+}
+.contenedorImagen{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center!important;
+}
+.contenedorImagen p{
+    text-align: center;
+    margin-top: 80px;
+}
+.imagenForm{
+    width: 50%!important;
+    height: 90%!important;
+}
+.contenedorNoImagen{
+    background-color: rgb(217,217,217);
+    width: 200px;
+    height:230px;
+}
+.subContenedorNoImagen{
+    background-color: rgb(192, 191, 191);
+    border: 2px dotted rgb(79, 79, 79);
+    margin: 10px;
+    height: 210px;
+    width: 180px;
+}
+.btn-add{
+    display: flex!important;
+    justify-content: flex-end!important;
+    margin: 10px;
 }
