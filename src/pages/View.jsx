@@ -10,14 +10,14 @@ import '../assets/css/form.css'
 import '../assets/css/view.css'
 
 const View = () => {
-    const [item,setItem] = useState(null)
+    const [item,setItem] = useState([])
     const params = useParams()
     const store = useAppContext()
 
     useEffect( () => {
         const book = store.getItem(params.bookId)
         setItem(book)
-    },[])
+    },[store,params])
 
     if(!item){
         return (
