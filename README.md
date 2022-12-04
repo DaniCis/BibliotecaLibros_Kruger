@@ -6,7 +6,7 @@
 
 ## App Preview
  
-
+<img src="./src/assets/book.png" height="300px">
 
 ## Built with 
 
