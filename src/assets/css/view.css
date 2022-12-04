@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat&display=swap');
+
+.div-link{
+    margin-top: 15px;
+    margin-left: 20px;
+}
+.back-link{
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(227, 122, 9);
+}
+.contendorNotFound{
+    margin: 100px;
+}
+.textNotFound{
+    font-family: 'Comfortaa', cursive;
+    font-weight: 400;
+    font-size: 28.4444px;
+    line-height: 32px;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+}

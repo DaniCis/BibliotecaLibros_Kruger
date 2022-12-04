@@ -1,18 +1,17 @@
 import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
+import Col from 'react-bootstrap/Col'
 import { Link } from 'react-router-dom'
 
-const Book = ({item}) =>{
+const Book = ({item}) => {
     return(
         <Container>
-            <Link to ={`/view/${item.id}`}>
-                <Card>
+            <div className='contenedorBook'>
+                <h5>{item.title}</h5>
+                <Link to ={`/view/${item.id}`}>
                     <img src={item.cover} height="150" width="120" alt={item.title} />
-                    <Card.Body>
-                        <Card.Title>{item.title}</Card.Title>
-                    </Card.Body>
-                </Card>
-            </Link>
+                </Link>
+            </div>
         </Container>
     )
 }

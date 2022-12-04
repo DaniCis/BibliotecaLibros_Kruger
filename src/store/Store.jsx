@@ -1,4 +1,4 @@
-import { useContext, createContext, useState } from "react"
+import { useContext, createContext, useState, useEffect } from "react"
 
 const AppContext = createContext({
     items:[],
@@ -8,8 +8,12 @@ const AppContext = createContext({
 })
 
 const Store = ({children}) =>{
-    const [items,setItems] = useState([])
+    const [items,setItems] = useState(JSON.parse(localStorage.getItem('items')) || [])
     
+    useEffect(() => {
+        localStorage.setItem('items', JSON.stringify(items))
+    }, [items])
+
     const createItem = (item) => {
         const temp = [...items]
         temp.unshift(item)
@@ -34,7 +38,6 @@ const Store = ({children}) =>{
             {children}
         </AppContext.Provider>
     )
-
 }
 export default Store;
 

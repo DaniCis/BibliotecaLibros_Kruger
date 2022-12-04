@@ -1,42 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat&display=swap');
-
-/*NAVIGATION*/
-.nav-title{
-    font-family: 'Comfortaa', cursive;
-    font-weight: 400;
-    font-size: 28.4444px;
-    line-height: 32px;
-    color: #000;
-    text-decoration: none;
+.contenedorMain{
+    margin: 20px 0;
 }
-.nav-title img{
-    width: 60px;
-    height: 60px;
-    padding-bottom: 15px;
+.mainTitle{
+    margin-bottom: 10px;
+    text-align: center;
+    font-family:'Comfortaa',cursive;
 }
-.container-nav{
-    background-image: url(https://krugercorp.com/wp-content/uploads/2022/10/bg-menu-e1647277565718.png);
-    background-position: center;
-    background-size: cover;
+.contenedorBook{
+    margin: 15px 0;
+    background-color: rgba(233, 233, 233, 0.841);
+    border-radius: 5%;
+    padding: 10px 0;
+    height: 240px;
 }
-.navPrincipal{
-    display: flex;
-    justify-content: flex-end;
+.contenedorBook h5{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
-.nav1 a{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 24px;
-    text-align: right;
-    letter-spacing: -0.015em;
-    color: #000;
-    text-decoration: none;
-    margin: 0 40px;
-}
-.nav1 a:hover{
-    color: rgb(229, 193, 30);
-}
-.active{
-    border-bottom: 2px solid black;
+.contenedorBook img{
+    display:block;
+    margin:auto;
 }

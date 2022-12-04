@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat&display=swap');
+
+/*NAVIGATION*/
+.nav-title{
+    font-family: 'Comfortaa', cursive;
+    font-weight: 400;
+    font-size: 28.4444px;
+    line-height: 32px;
+    color: #000;
+    text-decoration: none;
+}
+.nav-title img{
+    width: 60px;
+    height: 60px;
+    padding-bottom: 15px;
+}
+.container-nav{
+    background-image: url(https://krugercorp.com/wp-content/uploads/2022/10/bg-menu-e1647277565718.png);
+    background-position: center;
+    background-size: cover;
+}
+.navPrincipal{
+    display: flex;
+    justify-content: flex-end;
+}
+.nav1 a{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 24px;
+    text-align: right;
+    letter-spacing: -0.015em;
+    color: #000;
+    text-decoration: none;
+    margin: 0 40px;
+}
+.nav1 a:hover{
+    color: rgb(229, 193, 30);
+}
+.active{
+    border-bottom: 2px solid black;
+}
