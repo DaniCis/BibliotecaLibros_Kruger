@@ -15,6 +15,8 @@
 - React.JS v18
 - React Bootstrap
 - React Router Dom
+- LocalStorage
+- Netlify
 
 ## Live Demo
 
