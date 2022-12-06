@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Create from './pages/Create';
 import View from './pages/View';
 import Store from "./store/Store";
+import Edit from "./pages/Edit";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='create' element={<Create />} />
           <Route path='view/:bookId' element={<View />} />
+          <Route path='edit/:bookId' element={<Edit />} />
         </Routes>
       </Router>
     </Store>

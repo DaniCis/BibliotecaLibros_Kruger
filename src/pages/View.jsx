@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useParams, NavLink } from "react-router-dom";
+import { useParams, NavLink, Link } from "react-router-dom";
 import { useAppContext } from "../store/Store";
 import Layout from "../components/Layout";
 import Form from "react-bootstrap/Form"
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
+import Button from "react-bootstrap/Button"
 import '../assets/css/form.css'
 import '../assets/css/view.css'
 
@@ -35,6 +36,7 @@ const View = () => {
             </Layout>
         )
     }
+    
     return(
         <Layout>
             <Row style={{marginRight:0}} >
@@ -78,6 +80,11 @@ const View = () => {
                                 <Form.Label>Review</Form.Label>
                                 <p>{item?.review}</p>
                             </Form.Group>
+                            <Link to ={`/edit/${item.id}`} style ={{textDecoration: 'none'}}>
+                                <div className="btn-add">
+                                    <Button variant="info">Edit ✏️</Button>
+                                </div>
+                            </Link>
                         </Col>
                     </Row>
                 </Card>
