@@ -11,7 +11,9 @@ const Book = ({item}) => {
                     <img src={item.cover} height="150" width="120" alt={item.title} />
                 </Link>
                 <Link  to ={`/view/${item.id}`}>
-                    <Button className='btn-more' size='sm' variant="outline-success">View More</Button>
+                    <div className='contenedorBtn'>
+                        <Button className='btn-more' size='sm' variant="outline-success">View More</Button>
+                    </div>
                 </Link>
             </div>
         </Container>

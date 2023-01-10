@@ -22,9 +22,12 @@
     display:block;
     margin:auto;
 }
-.contenedorBook .btn-more{
+.contenedorBtn{
+    display: flex;
+    justify-content: center;
+}
+.contenedorBtn .btn-more{
     margin-top: 10px;
-    margin-left: 50px;
 }
 .contenedorSin{
     display: flex;
