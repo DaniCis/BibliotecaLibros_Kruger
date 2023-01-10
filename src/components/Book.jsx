@@ -1,4 +1,5 @@
 import Container from 'react-bootstrap/Container'
+import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
 
 const Book = ({item}) => {
@@ -8,6 +9,9 @@ const Book = ({item}) => {
                 <h5>{item.title}</h5>
                 <Link to ={`/view/${item.id}`}>
                     <img src={item.cover} height="150" width="120" alt={item.title} />
+                </Link>
+                <Link  to ={`/view/${item.id}`}>
+                    <Button className='btn-more' size='sm' variant="outline-success">View More</Button>
                 </Link>
             </div>
         </Container>
